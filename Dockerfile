@@ -14,6 +14,8 @@ COPY set-exim4-update-conf /bin/
 RUN chmod a+x /bin/entrypoint.sh && \
     chmod a+x /bin/set-exim4-update-conf
 
+
 EXPOSE 25
 ENTRYPOINT ["/bin/entrypoint.sh"]
+RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
 CMD ["exim", "-bd", "-q15m", "-v"]
