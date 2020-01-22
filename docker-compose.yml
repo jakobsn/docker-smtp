@@ -6,12 +6,12 @@ services:
     restart: always
     ports:
      - "25:25"
-    environment:
+    # environment:
      # # MUST start with : e.g RELAY_NETWORKS=:192.168.0.0/24:10.0.0.0/16
      # # if acting as a relay this or RELAY_DOMAINS must be filled out or incoming mail will be rejected
-     # - RELAY_NETWORKS= :192.168.0.0/24
+     #- RELAY_NETWORKS= :192.168.0.0/24:129.241.0.0/24
      # # what domains should be accepted to forward to lower distance MX server.
-     # - RELAY_DOMAINS= <domain1> : <domain2> : <domain3>
+     #- RELAY_DOMAINS= webpy
      # # To act as a Gmail relay
      # - GMAIL_USER=
      # - GMAIL_PASSWORD=
@@ -23,13 +23,13 @@ services:
      # - KEY_PATH=
      # - CERTIFICATE_PATH=
      # # the outgoing mail hostname
-     # - MAILNAME=
+     # - MAILNAME=webpy
      # # set this to any value to disable ipv6
      # - DISABLE_IPV6=
      # # Generic SMTP Relay
-     # - SMARTHOST_ADDRESS=
-     # - SMARTHOST_PORT=
-     # - SMARTHOST_USER=
+     # - SMARTHOST_ADDRESS=mail.mysmtp.com
+     # - SMARTHOST_PORT=587
+     # - SMARTHOST_USER=myuser
      # - SMARTHOST_PASSWORD=
-     # - SMARTHOST_ALIASES=
+     # - SMARTHOST_ALIASES=*.mysmtp.com
 
